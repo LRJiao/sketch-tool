@@ -29,7 +29,11 @@ export class ConeViewComponent implements AfterViewInit{
 
   clicked():void {
     let c2 = this.vtkDiv2.nativeElement;
-    this.cs2.Add(this.afterButtonPressedValue, c2);
+    let sketchEntries = this.afterButtonPressedValue.split(";");
+    let i = 0;
+    for(i = 0; i < sketchEntries.length; i++) {
+      this.cs2.Add(sketchEntries[i], c2);
+    }
   }
 
   constructor() { }
